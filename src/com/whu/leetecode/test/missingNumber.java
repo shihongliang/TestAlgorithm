@@ -15,9 +15,9 @@ public class missingNumber {
     }
 
     public static void main(String[] args) {
-        int[] nums = { 0,1,3 };
+        int[] nums = { 0, 1, 3 };
         missingNumber m = new missingNumber();
-        int num=  m.missingNumber(nums);
+        int num = m.missingNumber(nums);
         System.out.println(num);
     }
 }

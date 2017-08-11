@@ -6,11 +6,9 @@ package com.whu.leetecode.test;
 public class buildTree {
 
     public TreeNode buildTree(int[] inorder, int[] postorder) {
-
         if (inorder == null || postorder == null || inorder.length == 0 || inorder.length != postorder.length) {
             return null;
         }
-
         return solve(inorder, 0, inorder.length - 1, postorder, 0, postorder.length - 1);
     }
 
