@@ -11,37 +11,31 @@ import java.util.concurrent.TimeUnit;
  * @author hongliang
  *
  */
-public class ScheduledExecutorTest implements Runnable{
+public class ScheduledExecutorTest implements Runnable {
 
-	private String jobName="";
-	
-	/**
-	 * @param jobName
-	 */
-	public ScheduledExecutorTest(String jobName) {
-		super();
-		this.jobName = jobName;
-	}
+    private String jobName = "";
 
+    /**
+     * @param jobName
+     */
+    public ScheduledExecutorTest(String jobName) {
+        super();
+        this.jobName = jobName;
+    }
 
+    @Override
+    public void run() {
+        System.out.println("execut: " + jobName);
 
-	@Override
-	public void run() {
-		System.out.println("execut: "+jobName);
-		
-	}
-	
-	public static void main(String[]args)
-	{
-		ScheduledExecutorService service=Executors.newScheduledThreadPool(10);
-		long initialDelay1=1;
-		long period1=1;
-		//´ÓÏÖÔÚ¿ªÊ¼Ã¿¸ô1ÃëÖÓÖ®ºó£¬Ã¿¸ô1ÃëÖ´ÐÐ1´Îjob
-		service.scheduleAtFixedRate(new ScheduledExecutorTest("job2"), initialDelay1, period1, TimeUnit.SECONDS);
-		
-		
-	}
-	
-	
-	
+    }
+
+    public static void main(String[] args) {
+        ScheduledExecutorService service = Executors.newScheduledThreadPool(10);
+        long initialDelay1 = 1;
+        long period1 = 1;
+        // ï¿½ï¿½ï¿½ï¿½ï¿½Ú¿ï¿½Ê¼Ã¿ï¿½ï¿½1ï¿½ï¿½ï¿½ï¿½Ö®ï¿½ï¿½Ã¿ï¿½ï¿½1ï¿½ï¿½Ö´ï¿½ï¿½1ï¿½ï¿½job
+        service.scheduleAtFixedRate(new ScheduledExecutorTest("job2"), initialDelay1, period1, TimeUnit.SECONDS);
+
+    }
+
 }
